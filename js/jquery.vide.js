@@ -28,6 +28,7 @@
         volume: 0,
         playbackRate: 0.75,
         muted: true,
+        playsInline: true;
         loop: true,
         autoplay: true,
         position: '50% 50%',
@@ -317,7 +318,8 @@
                 muted: settings.muted,
                 defaultMuted: settings.muted,
                 playbackRate: settings.playbackRate,
-                defaultPlaybackRate: settings.playbackRate
+                defaultPlaybackRate: settings.playbackRate,
+                playsInline: true
             });
         } catch (e) {
             throw new Error(NOT_IMPLEMENTED_MSG);
