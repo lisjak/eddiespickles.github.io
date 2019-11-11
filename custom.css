@@ -1,8 +1,8 @@
 html {
     overflow-y: scroll;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
-
 
 body {
     width: 100%;
@@ -47,21 +47,106 @@ body {
     src: url('./fonts/Steelworks-Vintage.ttf');
 }
 
-.heropanel--video {
-    font-family: sans-serif;
-    height: 100vh;
-    max-width: 100vw;
-    z-index: 1;
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 2%;
+    z-index: 5000000000000;
+    transition: all 0.2s ease-in-out;
+    height: 3em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    color: white;
 }
 
-.vidContainer {
-    background-color: #00d47e;
-    z-index: 10;
-    min-height: 100%;
+.header a {
+    color: white;
+}
+
+.headerlink {
+    font-family: Atlantic-Cruise;
     position: relative;
+    bottom: 0;
+    padding: 2%;
+    font-size: 3vh;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    width: 100%;
 }
 
-@keyframes gm-slidein {
+.headerlink a {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.1px;
+    transition: color ease 0.3s;
+    padding: 0.5%;
+}
+
+.headerlink:nth-child(1) {
+    font-family: Steelworks-Vintage;
+    text-transform: none;
+    letter-spacing: -0.01em;
+    margin-right: 15%;
+}
+
+.headerlink a:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 12%;
+    left: 0;
+    bottom: 0;
+    background-color: #00d47e;
+    transition: all ease 0.3s;
+}
+
+.headerlink a:hover {
+    color: white;
+}
+
+.headerlink a:hover::after {
+    height: 100%;
+}
+
+.active {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.active a {
+    color: black;
+}
+
+.video-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+    z-index: -1000000;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+}
+
+.video-container video {
+    min-width: 100vw;
+    min-height: 100vh;
+    object-fit: cover;
+    z-index: -1000000;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+}
+
+@keyframes slidein {
     from {
         -webkit-transform: translate3d(0, -100%, 0);
         opacity: 0;
@@ -75,28 +160,27 @@ body {
 }
 
 .heropanel__content {
-    -moz-animation: gm-slidein 3s 1;
-    -ms-animation: gm-slidein 3s 1;
-    -o-animation: gm-slidein 3s 1;
-    -webkit-animation: gm-slidein 3s 1;
-    animation: gm-slidein 3s 1;
-    /* border-bottom: 1px solid #fff; */
-    /* border-top: 1px solid #fff; */
+    -moz-animation: slidein 3s 1;
+    -ms-animation: slidein 3s 1;
+    -o-animation: slidein 3s 1;
+    -webkit-animation: slidein 3s 1;
+    animation: slidein 3s 1;
     margin: 0 auto;
-    max-width: 50%;
-    max-height: 90%;
+    width: 100%;
+    max-height: 70%;
     padding-top: -10%;
     margin-bottom: 5%;
     text-align: center;
-    max-width: 70vw;
-    /* position: relative;
-    top: 50vh;
-    left: 50vh; */
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .heropanel__content h1 {
     margin: 0 0 0.5em;
-    /* border-top: 1px solid #fff; */
+    margin-top: 10%;
     padding-top: 10%;
     font-size: 19vw;
     line-height: 18vw;
@@ -120,182 +204,43 @@ body {
     max-width: 100vw;
     text-align: left;
     margin-top: -10%;
+    margin-left: 25%;
 }
 
 .heropanel__content p {
     color: #fff;
-    /* text-transform: uppercase; */
     font-family: Donatella;
     text-align: right;
     font-size: 5vw;
     max-width: 100vw;
     letter-spacing: -0.05em;
-    margin-top: -9%;
-}
-
-
-/* .header {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    align-content: stretch;
-    flex-wrap: wrap;
-    width: 100%;
-    padding-bottom: 8%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1000;
-} */
-
-.socialitems {
-    border: 1px solid black;
-    margin: 0.2em;
-    margin-bottom: 0.3em;
-    padding: 0.5%;
-    transition: 0.5s;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    /* position: absolute;
-    right: 2%; */
-}
-
-.socialitems:hover {
-    background-color: #00d47e;
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
-    transition: 0.5s;
-}
-
-.socialitems img {
-    width: 16px;
-    padding-left: 0.2em;
-    padding-right: 0.2em;
-}
-
-
-/* .socialitems:nth-child(4) {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    position: absolute;
-    right: 2%;
-} */
-
-.banner {
-    min-width: 100%;
-    max-height: 10%;
-    /* margin-top: -15%; */
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    align-content: stretch;
-    flex-wrap: wrap;
-}
-
-.headwords {
-    font-family: 'Hermione-Regular';
-    color: black;
-    background-color: white;
-    letter-spacing: 0.1em;
-    font-size: 2.5vh;
-    border-bottom: 0.02em solid black;
-    order: 1;
-    width: 50%;
-    border-top: 0.2em solid black;
-}
-
-.logo {
-    font-family: 'Steelworks-Vintage';
-    font-size: 9.5vh;
-    color: black;
-    border: 0.01em solid black;
-    border-radius: 50%;
-    padding: 5%;
-    background-color: white;
-    position: absolute;
-    left: 32%;
-    top: 40%;
-    /* height: 100%; */
-}
-
-.headwords:nth-child(2) {
-    order: 2;
-    text-align: right;
-    color: blue;
-}
-
-.headwords:nth-child(3) {
-    order: 2;
-    text-align: right;
-    color: red;
-}
-
-.subheadwords {
-    width: 50%;
-    font-family: 'Atlantic-Cruise';
-    color: white;
-    background-color: #00d47e;
-    font-size: 2.2vh;
-    border-bottom: 0.2em solid black;
-    order: 3;
-}
-
-.subheadwords:nth-child(3) {
-    order: 4;
-    text-align: right;
-    color: red;
-}
-
-.logo:nth-child(5) {
-    color: green;
-    z-index: 10;
+    margin-top: -6%;
+    margin-right: 15%;
 }
 
 .slogan {
-    font-family: Donatella;
-    font-size: 2.8em;
-    line-height: 3em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 100%;
-    margin-top: 15vh;
+    max-width: 100vw;
+    padding-bottom: 4%;
+    padding-top: 4%;
+    z-index: 10;
+    background-color: white;
     position: relative;
-    margin-bottom: -87%;
-    margin-top: 1%;
+}
+
+.slogan img {
+    max-width: 90vw;
+    margin-top: -0%;
     z-index: 10;
 }
 
-.slogan path {
-    fill: transparent;
-}
-
-.slogan text {
-    fill: black;
-}
-
-.dill {
-    width: 100%;
-    height: 20vw;
-    margin-bottom: 4%;
-    z-index: -10;
-}
-
-.dill img {
-    max-width: 40vw;
-}
-
-.about {
+#about {
     background-color: white;
     max-width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.about img {
+#about img {
     position: absolute;
     left: 40vw;
     min-width: 50vw;
@@ -305,13 +250,13 @@ body {
     transition: 0.5s;
 }
 
-.about img:hover {
+#about img:hover {
     filter: grayscale();
     box-shadow: 0.5em 0.5em black;
     transition: 0.5s;
 }
 
-.about h1 {
+#about h1 {
     font-family: Lemon-Milk;
     font-size: 10vw;
     color: black;
@@ -323,7 +268,7 @@ body {
     text-shadow: 2px 2px white;
 }
 
-.about p {
+#about p {
     font-family: American-Typewriter-Regular;
     color: black;
     font-size: 4vw;
@@ -393,13 +338,13 @@ body {
     /* letter-spacing: -0.03em; */
 }
 
-.meetthepickles {
+#meetthepickles {
     background-color: white;
     max-width: 100%;
     padding: 2%;
 }
 
-.meetthepickles img {
+#meetthepickles img {
     position: absolute;
     left: 10vw;
     margin: 1em;
@@ -410,13 +355,13 @@ body {
     transition: 0.5s;
 }
 
-.meetthepickles img:hover {
+#meetthepickles img:hover {
     filter: grayscale();
     box-shadow: -0.5em 0.5em black;
     transition: 0.5s;
 }
 
-.meetthepickles h1 {
+#meetthepickles h1 {
     font-family: Lemon-Milk;
     font-size: 10vw;
     color: black;
@@ -429,7 +374,7 @@ body {
     text-shadow: 2px 2px white;
 }
 
-.meetthepickles p {
+#meetthepickles p {
     font-family: American-Typewriter-Regular;
     color: black;
     font-size: 4vw;
