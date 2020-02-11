@@ -1,3 +1,5 @@
+/*old green #74c365 */
+
 html {
     overflow-y: scroll;
     overflow-x: hidden;
@@ -47,6 +49,11 @@ body {
     src: url('./fonts/Steelworks-Vintage.ttf');
 }
 
+@font-face {
+    font-family: 'Bad-Ride';
+    src: url('./fonts/Bad-Ride.otf');
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -89,10 +96,12 @@ body {
 }
 
 .headerlink:nth-child(1) {
-    font-family: Steelworks-Vintage;
+    font-family: Bad-Ride;
     text-transform: none;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
+    font-size: 4vh;
     margin-right: 15%;
+    margin-top: -0.05vh;
 }
 
 .headerlink a:after {
@@ -103,7 +112,7 @@ body {
     height: 12%;
     left: 0;
     bottom: 0;
-    background-color: #00d47e;
+    background-color: #74c365;
     transition: all ease 0.3s;
 }
 
@@ -135,6 +144,8 @@ body {
     z-index: -1000000;
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0);
+    border-bottom: 30px solid transparent;
+    border-image: url(./media/boards.jpg) 50 round;
 }
 
 .video-container video {
@@ -184,16 +195,17 @@ body {
     padding-top: 10%;
     font-size: 19vw;
     line-height: 18vw;
-    font-family: Steelworks-Vintage;
+    font-family: Bad-Ride;
     z-index: 1000;
     opacity: 1;
+    font-weight: normal;
 }
 
 .heropanel__content h1 a {
     color: #fff;
     text-decoration: none;
-    letter-spacing: -0.05em;
-    text-shadow: 0.01em 0.01em 0 #00d47e, 0.02em 0.02em 0 black;
+    /* letter-spacing: -0.05em; */
+    text-shadow: 0.01em 0.01em 0 #74c365, 0.02em 0.02em 0 black;
 }
 
 .heropanel__content h2 {
@@ -282,7 +294,7 @@ body {
 }
 
 .message {
-    background-color: #00d47e;
+    background-color: #74c365;
     max-width: 100%;
     -webkit-transform: skewY(-5deg);
     -moz-transform: skewY(-5deg);
@@ -291,6 +303,9 @@ body {
     transform: skewY(-5deg);
     padding: 2%;
     margin-bottom: 5%;
+    border-bottom: 30px solid transparent;
+    border-top: 30px solid transparent;
+    border-image: url(./media/boards.jpg) 50 round;
 }
 
 .message h1 {
@@ -329,13 +344,13 @@ body {
 }
 
 .signature {
-    font-family: Midnight-Signature;
+    font-family: Donatella;
     font-size: 7vw;
     text-align: right;
     color: black;
     margin-top: 4%;
     padding-right: 4%;
-    /* letter-spacing: -0.03em; */
+    letter-spacing: 0.03em;
 }
 
 #meetthepickles {
@@ -402,7 +417,7 @@ body {
 
 .pickleitem h2 {
     font-family: Atlantic-Cruise;
-    color: #00d47e;
+    color: #74c365;
     font-size: 5vw;
     letter-spacing: 0.05em;
     text-align: center;
@@ -423,7 +438,7 @@ body {
 }
 
 .meetgreet {
-    background-color: #00d47e;
+    background-color: #74c365;
     max-width: 100%;
     -webkit-transform: skewY(5deg);
     -moz-transform: skewY(5deg);
@@ -433,6 +448,9 @@ body {
     padding: 2%;
     padding-bottom: 5%;
     margin-bottom: 5%;
+    border-bottom: 30px solid transparent;
+    border-top: 30px solid transparent;
+    border-image: url(./media/boards.jpg) 50 round;
 }
 
 .meetgreet h1 {
@@ -555,7 +573,7 @@ body {
     height: 12%;
     left: 0;
     bottom: 0;
-    background-color: #00d47e;
+    background-color: #74c365;
     transition: all ease 0.3s;
 }
 
