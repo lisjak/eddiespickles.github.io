@@ -5,7 +5,7 @@ Eddie's Pickles is a lightweight SPA built for a private client emphasizing vide
 * HTML
 * CSS
 * Vanilla Javascript
-* JQuery
+* jQuery
 
 # Demo
 View a demo version of Eddie's Pickles at eddiespickles.github.io. 
