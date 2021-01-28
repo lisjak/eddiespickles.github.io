@@ -62,7 +62,7 @@ body {
     padding-bottom: 2%;
     z-index: 5000000000000;
     transition: all 0.2s ease-in-out;
-    height: 3em;
+    height: 4em;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -77,7 +77,7 @@ body {
 .headerlink {
     font-family: Atlantic-Cruise;
     position: relative;
-    bottom: 0;
+    bottom: 20%;
     padding: 2%;
     font-size: 3vh;
     text-align: center;
@@ -101,7 +101,7 @@ body {
     letter-spacing: 0;
     font-size: 4vh;
     margin-right: 15%;
-    margin-top: -0.05vh;
+    /* margin-top: -0.05vh; */
 }
 
 .headerlink a:after {
@@ -280,7 +280,8 @@ body {
     text-shadow: 2px 2px white;
 }
 
-#about p {
+
+#text1 p {
     font-family: American-Typewriter-Regular;
     color: black;
     font-size: 4vw;
@@ -290,6 +291,20 @@ body {
     position: relative;
     left: 10vw;
     margin-top: -8%;
+    text-shadow: 2px 2px white;
+}
+
+#text2 p {
+    font-family: American-Typewriter-Regular;
+    color: black;
+    font-size: 4vw;
+    letter-spacing: -0.05em;
+    width: 80%; 
+    z-index: 2;
+    position: relative;
+    left: 10vw;
+    margin-top: -4%;
+    margin-bottom: 5%;
     text-shadow: 2px 2px white;
 }
 
@@ -329,7 +344,7 @@ body {
     color: white;
     font-size: 2.5vh;
     line-height: 4vh;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.02em;
     max-width: 100%;
     z-index: 2;
     /* position: relative;
@@ -348,7 +363,7 @@ body {
     font-size: 7vw;
     text-align: right;
     color: black;
-    margin-top: 4%;
+    margin-top: -1%;
     padding-right: 4%;
     letter-spacing: 0.03em;
 }
@@ -400,19 +415,20 @@ body {
     left: 50vw;
     text-shadow: 2px 2px white;
     margin-top: -3%;
-    margin-bottom: 5%;
+    margin-bottom: 15%;
 }
 
 .pickles {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     height: 50%;
     width: 100%;
     z-index: 10;
 }
 
 .pickleitem {
-    width: 33%;
+    width: 50%;
 }
 
 .pickleitem h2 {
@@ -428,13 +444,70 @@ body {
 .pickleitem h3 {
     font-family: American-Typewriter-Regular;
     color: black;
-    font-size: 2.8vw;
-    line-height: 3.8vw;
+    font-size: 1.8vw;
+    line-height: 2.8vw;
     letter-spacing: 0.01em;
     max-width: 100%;
     z-index: 2;
     text-align: center;
     padding: 10%;
+}
+
+.buttoncontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 10%;
+    flex-direction: column;
+}
+
+.buttoncontainer p {
+    font-family: American-Typewriter-Regular;
+    color: black;
+    font-size: 3vw;
+    letter-spacing: -0.05em;
+    /* width: 80%; */
+    text-align: center;
+    /* z-index: 2;
+    position: relative;
+    left: 50vw; */
+    text-shadow: 1px 1px #74c365;
+    margin-top: -3%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.button {
+    background-color: #74c365;
+    border: 5px solid black;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Atlantic-Cruise;
+    font-size: 4vw;
+    letter-spacing: 0.05em;
+    text-align: center;
+    width: 60%;
+    box-shadow: -0.1em 0.1em black;
+    transition: 0.5s;
+
+}
+
+.button:hover {
+    background-color: #74c365;
+    border: 5px solid black;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Atlantic-Cruise;
+    font-size: 4vw;
+    letter-spacing: 0.05em;
+    text-align: center;
+    width: 70%;
+    box-shadow: -0.1em 0.1em black;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 .meetgreet {
@@ -446,12 +519,38 @@ body {
     -o-transform: skewY(5deg);
     transform: skewY(5deg);
     padding: 2%;
-    padding-bottom: 5%;
-    margin-bottom: 5%;
+    padding-bottom: 10%;
+    margin-bottom: 10%;
     border-bottom: 30px solid transparent;
     border-top: 30px solid transparent;
     border-image: url(./media/boards.jpg) 50 round;
 }
+
+.meets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    padding-top: -20%;
+    margin-top: -5%;
+    /* flex-grow: 1; */
+    align-items: center;
+    justify-content: space-between;
+    -webkit-transform: skewY(-5deg);
+    -moz-transform: skewY(-5deg);
+    -ms-transform: skewY(-5deg);
+    -o-transform: skewY(-5deg);
+    transform: skewY(-5deg);
+}
+
+.meetitem {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 20%;
+    margin-top: -5%;
+    height: 50%;
+}
+
+
 
 .meetgreet h1 {
     font-family: Lemon-Milk;
@@ -467,19 +566,20 @@ body {
     -ms-transform: skewY(-5deg);
     -o-transform: skewY(-5deg);
     transform: skewY(-5deg);
+    margin-bottom: 10%;
 }
 
 .meetgreet h2 {
     font-family: Atlantic-Cruise;
     color: white;
-    font-size: 5vw;
+    font-size: 4vw;
     letter-spacing: 0.05em;
     text-align: left;
-    -webkit-transform: skewY(-5deg);
+    /* -webkit-transform: skewY(-5deg);
     -moz-transform: skewY(-5deg);
     -ms-transform: skewY(-5deg);
     -o-transform: skewY(-5deg);
-    transform: skewY(-5deg);
+    transform: skewY(-5deg); */
     margin-bottom: -1%;
 }
 
@@ -487,18 +587,18 @@ body {
     font-family: American-Typewriter-Regular;
     color: black;
     font-size: 2.5vh;
-    line-height: 4vh;
+    line-height: 3vh;
     letter-spacing: -0.05em;
-    max-width: 100%;
+    /* max-width: 100%; */
     z-index: 2;
     /* position: relative;
     left: 10vw; */
     margin: 0.5%;
-    -webkit-transform: skewY(-5deg);
+    /* -webkit-transform: skewY(-5deg);
     -moz-transform: skewY(-5deg);
     -ms-transform: skewY(-5deg);
     -o-transform: skewY(-5deg);
-    transform: skewY(-5deg);
+    transform: skewY(-5deg); */
 }
 
 .meetgreet a {
@@ -514,17 +614,36 @@ body {
     transition: 0.5s ease;
 }
 
+.meetitem a {
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid black;
+    transition: 0.5s ease;
+}
+
+.meetitem a:hover {
+    color: black;
+    border-bottom: 2px solid white;
+    transition: 0.5s ease;
+}
+
 .social {
     -webkit-transform: skewY(-5deg);
     -moz-transform: skewY(-5deg);
     -ms-transform: skewY(-5deg);
     -o-transform: skewY(-5deg);
     transform: skewY(-5deg);
+     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    justify-content: space-between
 }
 
+
 .social img {
-    width: 16px;
-    padding: 0.2em;
+    max-width: 20%;
+    min-width: 10%;
+    padding: 0.5em;
     border: 1px solid white;
     transition: 0.5s ease;
 }
